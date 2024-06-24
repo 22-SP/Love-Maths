@@ -110,7 +110,8 @@ body {
     margin: 0 30px;
     transition: all 0.5s;
 }
-.btn--big::after{
+
+.btn--big::after {
     content: attr(data-type);
     font-size: 1rem;
     color: #445361;
@@ -118,6 +119,7 @@ body {
     left: -0.5em;
 
 }
+
 .btn--blue {
     border-color: blue;
     color: blue;
@@ -176,32 +178,77 @@ body {
 
 /* --------- Media queries */
 
+
 @media (max-width: 414px) {
+
+    /* Styles for screens below 414px (mobiles) */
+    /* Styles for screens below 414px (mobiles) */
+    .game-area {
+        display: flex;
+        align-content: center;
+        align-items: center;
+        /* Center items horizontally */
+        justify-content: space-betweens;
+    }
+
     .controls-area {
-        width: 100%;
+        display: flex;
+        flex-direction: column;
+        radius: 50%;
+        justify-content: space-around margin-top: 20px;
+        padding: none;
+        align-items: center;
     }
 
     .btn--big {
-        margin: 0 10px;
-        padding: 5px;
-        border: 5px solid;
-        width: 50px;
-        height: 50px;
-        font-size: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        padding: 10px 20px;
+        width: 30vw;
+        height: 30vw;
+        max-width: 80px;
+        max-height: 80px;
+        margin: 10px;
+        font-size: 5vw;
+        /* Responsive font size */
+        position: relative;
+        align-items: center;
+        gap: 5px;
+
     }
 
     .btn--big::after {
-        font-size: 0.6rem;
-        left: -0.7rem;
+        font-size: 3vw;
+        /* Responsive font size for the text after */
+        position: absolute;
+        width: 100%;
+        left: 0;
+        text-align: center;
+        bottom: -45%;
+        /* Adjust position as needed */
     }
+
+
+
+
 
     .question-area {
-        padding: 10% 0;
-        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        /* Center items horizontally */
+        align-items: center;
+        text-align: center;
+        /* Center text */
+        margin-top: 20px;
+        /* Add margin at the top */
     }
 
-    .question-area span {
-        padding: 0;
+    .question-area span,
+    .question-area input {
+        flex: 0 0 auto;
+        /* Let items take their natural width */
     }
 
     .answer-message {
@@ -209,27 +256,53 @@ body {
     }
 
     #answer-box {
-        display: block;
-        margin: 0 auto;
+        width: 80%;
+        /* Adjust width of input box */
+        max-width: 200px margin: 10px auto;
+        padding: 8px;
+        /* Adjust padding for input box */
+        font-size: 1rem;
+        /* Adjust font size for input box */
     }
+
     .btn--gray {
-        margin-top: 0;
+        display: block;
+        width: 80%;
+        /* Adjust width of button */
+        max-width: 200px;
+        /* Maximum width for responsiveness */
+        margin: 20px auto 0;
+        /* Center align button and add margin */
+        padding: 10px;
+        /* Adjust padding for button */
+        font-size: 1rem;
+        /* Adjust font size for button */
     }
 
     .score-area {
-        width: 100%;
+        text-align: center;
+        /* Center align content */
+        margin-top: 20px;
+        /* Adjust top margin */
     }
 
     .scores {
-        margin: 0.5em auto;
-        display: block;
-        padding: 5px;
+        margin-bottom: 10px;
+        /* Space between score elements */
+        font-size: 1rem;
+        /* Adjust font size for score elements */
     }
 
     .heading {
         font-size: 2rem;
+        /* Adjust heading font size */
+        text-align: center;
+        /* Center align heading */
+        margin-top: 20px;
+        /* Add margin at the top */
     }
 }
+
 
 @media (max-width: 320px) {
     .game-area {
@@ -239,11 +312,17 @@ body {
     .controls-area {
         width: 75%;
         margin: 10px auto;
+        display: flex;
+        flex-direction: column;
+        /* Stack buttons vertically */
+        align-items: center;
+        /* Center buttons horizontally */
     }
 
     .btn--big {
-        margin: 10px 10px;
+        margin: 10px 0;
     }
+
     .question-area {
         padding: 10px 0;
     }
